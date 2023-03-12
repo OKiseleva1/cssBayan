@@ -2,10 +2,12 @@ body {
     background-color: #f5ecb4;
     margin: 0 auto;
     font-family: "Verdana", sans-serif;
+    padding-left: 10rem;
+    padding-right: 10rem;
 }
 
 .wrapper {
-    margin: 2rem auto;
+    margin: 4rem auto;
 }
 
 
@@ -14,13 +16,13 @@ body {
     margin: 0 auto;
 }
 
-.accordion-plus {
+.plus {
     transition: transform 0.5s;
     width: 2rem;
     height: 2rem;
 }
 
-.checkbox:checked+.accordion-label .accordion-header .accordion-plus {
+.checkbox:checked+.label .accordion-header .accordion-plus {
     transform: rotate(45deg);
 }
 
@@ -49,14 +51,14 @@ body {
     transition-timing-function: ease-in;
 }
 
-.checkbox:checked+.accordion-label .accordion-content .accordion-meme {
+.checkbox:checked+.label .accordion-content .accordion-meme {
     width: 20rem;
     height: 20rem;
     margin-bottom: 2rem;
     transition: width 0.5s, height 0.5s, padding 0.5s;
 }
 
-.checkbox:checked+.accordion-label .accordion-header {
+.checkbox:checked+.label .accordion-header {
     color: #15e030;
 }
 
@@ -69,7 +71,7 @@ body {
         cursor: pointer;
     }
 
-    .accordion-plus {
+    .plus {
         display: none;
     }
 
@@ -85,17 +87,21 @@ body {
         color: #15e030;
     }
 
-    .container:hover .checkbox:not(:checked)+.accordion-label .accordion-header .accordion-plus {
+    .container:hover .checkbox:not(:checked)+.label .accordion-header .plus {
         transform: rotate(45deg);
         transition: transform 0.5s;
     }
 
-    .wrapper:hover .accordion-header .accordion-plus {
+    .wrapper:hover .accordion-header .plus {
         display: block;
     }
 }
 
 @media (max-width: 788px) {
+    body {
+        padding: 0;
+    }
+
     h1 {
         font-size: 1.5rem;
     }
@@ -110,6 +116,11 @@ body {
 }
 
 @media (min-width: 789px) and (max-width: 1888px) {
+    body {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
     h1 {
         font-size: 2rem;
     }
@@ -117,7 +128,6 @@ body {
     h2 {
         font-size: 1.5rem;
     }
-
 
     .container {
         width: 60%;
@@ -132,7 +142,6 @@ body {
     h2 {
         font-size: 1.8rem;
     }
-
 
     .container {
         width: 40%;
