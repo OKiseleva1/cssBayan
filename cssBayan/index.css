@@ -1,7 +1,6 @@
 body {
     background-color: #f5ecb4;
-    margin: 0;
-    padding: 0;
+    margin: 0 auto;
     font-family: "Verdana", sans-serif;
 }
 
@@ -12,6 +11,7 @@ body {
 
 .container {
     border-bottom: 0.15rem solid #808080;
+    margin: 0 auto;
 }
 
 .accordion-plus {
@@ -20,11 +20,11 @@ body {
     height: 2rem;
 }
 
-.accordion-checkbox:checked+.accordion-label .accordion-header .accordion-plus {
+.checkbox:checked+.accordion-label .accordion-header .accordion-plus {
     transform: rotate(45deg);
 }
 
-.accordion-checkbox {
+.checkbox {
     display: none;
 }
 
@@ -49,14 +49,14 @@ body {
     transition-timing-function: ease-in;
 }
 
-.accordion-checkbox:checked+.accordion-label .accordion-content .accordion-meme {
+.checkbox:checked+.accordion-label .accordion-content .accordion-meme {
     width: 20rem;
     height: 20rem;
     margin-bottom: 2rem;
     transition: width 0.5s, height 0.5s, padding 0.5s;
 }
 
-.accordion-checkbox:checked+.accordion-label .accordion-header {
+.checkbox:checked+.accordion-label .accordion-header {
     color: #15e030;
 }
 
@@ -85,12 +85,56 @@ body {
         color: #15e030;
     }
 
-    .container:hover .accordion-checkbox:not(:checked)+.accordion-label .accordion-header .accordion-plus {
+    .container:hover .checkbox:not(:checked)+.accordion-label .accordion-header .accordion-plus {
         transform: rotate(45deg);
         transition: transform 0.5s;
     }
 
     .wrapper:hover .accordion-header .accordion-plus {
         display: block;
+    }
+}
+
+@media (max-width: 788px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+@media (min-width: 789px) and (max-width: 1888px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+
+    .container {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1889px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+
+    .container {
+        width: 40%;
     }
 }
