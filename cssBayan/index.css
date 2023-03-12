@@ -1,0 +1,149 @@
+body {
+    background-color: #f5ecb4;
+    margin: 0 auto;
+    font-family: "Verdana", sans-serif;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.wrapper {
+    margin: 4rem auto;
+}
+
+
+.container {
+    border-bottom: 0.15rem solid #808080;
+    margin: 0 auto;
+}
+
+.plus {
+    transition: transform 0.5s;
+    width: 2rem;
+    height: 2rem;
+}
+
+.checkbox:checked+.label .accordion-header .accordion-plus {
+    transform: rotate(45deg);
+}
+
+.checkbox {
+    display: none;
+}
+
+.accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-content {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.accordion-meme {
+    border-radius: 1rem;
+    width: 15rem;
+    height: 0;
+    margin-bottom: 0;
+    transition: width 0.5s, height 0.5s, margin-bottom 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.checkbox:checked+.label .accordion-content .accordion-meme {
+    width: 20rem;
+    height: 20rem;
+    margin-bottom: 2rem;
+    transition: width 0.5s, height 0.5s, padding 0.5s;
+}
+
+.checkbox:checked+.label .accordion-header {
+    color: #15e030;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    .accordion-content {
+        cursor: pointer;
+    }
+
+    .accordion-header {
+        cursor: pointer;
+    }
+
+    .plus {
+        display: none;
+    }
+
+    .accordion-header:hover+.accordion-content .accordion-meme,
+    .accordion-content:hover .accordion-meme {
+        width: 20rem;
+        height: 20rem;
+        margin-bottom: 2rem;
+        transition: width 0.5s, height 0.5s, padding 0.5s;
+    }
+
+    .container:hover .accordion-header {
+        color: #15e030;
+    }
+
+    .container:hover .checkbox:not(:checked)+.label .accordion-header .plus {
+        transform: rotate(45deg);
+        transition: transform 0.5s;
+    }
+
+    .wrapper:hover .accordion-header .plus {
+        display: block;
+    }
+}
+
+@media (max-width: 788px) {
+    body {
+        padding: 0;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+
+    h2 {
+        font-size: 1.2rem;
+    }
+
+    .container {
+        width: 90%;
+    }
+}
+
+@media (min-width: 789px) and (max-width: 1888px) {
+    body {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1889px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        width: 40%;
+    }
+}
